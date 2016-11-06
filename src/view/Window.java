@@ -10,6 +10,10 @@ import javax.swing.JTextArea;
 
 
 public class Window extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private final JLabel description;
 	private JPanel panel1;
 	private JPanel panel2;
@@ -18,13 +22,13 @@ public class Window extends JFrame {
 	
 	public Window(){
 		super("PDF Creator");
-		setSize(400,400);
-		FlowLayout layout = new FlowLayout();
+		setSize(420,200);
+		FlowLayout layout = new FlowLayout(FlowLayout.CENTER, 10,10);
 		setLayout(layout);
 		
 		panel1 = new JPanel();
 		description = new JLabel("Type your text below and press the button");
-		create = new JButton("Create PDF");
+		create = new JButton(controller.Controller.action);
 		panel1.add(description);
 		panel1.add(create);
 		add(panel1);
@@ -34,7 +38,7 @@ public class Window extends JFrame {
 		panel2.add(text);
 		add(panel2);
 		
-		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 	}
 
